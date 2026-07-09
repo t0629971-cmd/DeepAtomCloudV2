@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — DeepAtom Антивирус</title>
+  <meta name="description" content="Часто задаваемые вопросы о DeepAtom Antivirus.">
+  <link rel="canonical" href="https://deepatom.sytes.net/faq-ru.html">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/lang-switcher.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index-ru.html" class="logo">
+        <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+        DeepAtom
+      </a>
+      <nav class="main-nav">
+        <a href="index-ru.html">Главная</a>
+        <a href="features-ru.html">Возможности</a>
+        <a href="download-ru.html">Скачать</a>
+        <a href="docs-ru.html">Документация</a>
+        <a href="faq-ru.html" class="active">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="docs-ru.html" class="btn btn-ghost">Документация</a>
+        <a href="download-ru.html" class="btn btn-primary">Скачать бесплатно</a>
+        <button class="nav-toggle" aria-label="Переключить навигацию" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Поддержка</div>
+        <h1>Часто задаваемые вопросы</h1>
+        <p>Ответы на популярные вопросы о DeepAtom.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container" style="max-width:800px;">
+        
+        <div class="card reveal">
+          <h3>Бесплатен ли DeepAtom?</h3>
+          <p>Да! DeepAtom полностью бесплатен для личного и коммерческого использования.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Какие операционные системы поддерживаются?</h3>
+          <p>DeepAtom работает на Windows 7, 8, 10 и 11 (только x64).</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Нужно ли подключение к интернету?</h3>
+          <p>Нет. DeepAtom работает полностью автономно. Облачная проверка опциональна и не требуется для основной работы.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Как часто обновляется база сигнатур?</h3>
+          <p>YARA правила и SHA256 хеши обновляются при выходе новых версий. Вы можете вручную обновить базу, заменив файл yara_rules_combined.yar.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Можно ли использовать DeepAtom вместе с другим антивирусом?</h3>
+          <p>Да, но мы рекомендуем использовать только один антивирус с защитой в реальном времени, чтобы избежать конфликтов.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Как работает машинное обучение?</h3>
+          <p>DeepAtom использует классификатор LightGBM, обученный на 15 статических признаках PE-файлов. Модель анализирует структуру файла и предсказывает, является ли он вредоносным.</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Что такое Proactive Defense?</h3>
+          <p>Проактивная защита — это поведенческий анализ Ring-3, который мониторит запущенные процессы на предмет подозрительных действий (ransomware, инъекции, подмена).</p>
+        </div>
+
+        <div class="card reveal">
+          <h3>Есть ли поддержка?</h3>
+          <p>Поддержка осуществляется через <a href="https://github.com/t0629971-cmd/DeepAtomCloudV2">GitHub Issues</a>. Вы также можете задать вопрос в разделе Discussions.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index-ru.html" class="logo">
+            <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+            DeepAtom
+          </a>
+          <p>Антивирус с машинным обучением для Windows.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Продукт</h4>
+          <ul>
+            <li><a href="features-ru.html">Возможности</a></li>
+            <li><a href="download-ru.html">Скачать</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ресурсы</h4>
+          <ul>
+            <li><a href="docs-ru.html">Документация</a></li>
+            <li><a href="faq-ru.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Проект</h4>
+          <ul>
+            <li><a href="https://deepatom.sytes.net">deepatom.sytes.net</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> DeepAtom. Все права защищены.</span>
+        <span class="footer-domain">deepatom.sytes.net</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Вверх">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/lang-switcher.js"></script>
+</body>
+</html>
