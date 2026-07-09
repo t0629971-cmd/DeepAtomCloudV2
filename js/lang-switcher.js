@@ -70,9 +70,9 @@
     const targetPage = mapping[targetLang];
     saveLang(targetLang);
     
-    if (targetPage !== currentPage) {
-      window.location.href = targetPage;
-    }
+    // Always redirect when user explicitly clicks, even if already on target page
+    // This ensures the dropdown closes and provides visual feedback
+    window.location.href = targetPage;
   }
 
   // Initialize language switcher UI
