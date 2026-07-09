@@ -186,41 +186,272 @@
       </div>
     </section>
 
-    <!-- ================= COMPARISON TABLE ================= -->
+    <!-- ================= RING-3 VS RING-0 COMPARISON ================= -->
     <section class="section-pad" id="comparison">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">vs. the competition</div>
-          <h2>How DeepAtom compares</h2>
-          <p>DeepAtom isn't trying to replace enterprise-grade suites — it's an open, transparent engine built for PE threat detection.</p>
+          <div class="eyebrow">Ring-3 vs Ring-0</div>
+          <h2>DeepAtom vs Kaspersky: Architecture Comparison</h2>
+          <p>DeepAtom operates in Ring-3 (user mode) for stability and transparency. Kaspersky uses Ring-0 (kernel mode) for deeper system access. Here's what that means in practice.</p>
         </div>
 
         <div class="table-wrap reveal">
           <table>
             <thead>
               <tr>
-                <th>Feature</th>
-                <th class="highlight-col">DeepAtom</th>
-                <th>Kaspersky</th>
-                <th>Bitdefender</th>
-                <th>Windows Defender</th>
+                <th style="width:30%">Feature / Capability</th>
+                <th class="highlight-col" style="width:23%">DeepAtom (Ring-3)</th>
+                <th style="width:23%">Kaspersky (Ring-0)</th>
+                <th style="width:24%">Winner</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>PE detection</td><td class="highlight-col good">85–90%</td><td>99%</td><td>99%</td><td>98%</td></tr>
-              <tr><td>Zero-day detection</td><td class="highlight-col mid">20–50%</td><td>70%</td><td>75%</td><td>60%</td></tr>
-              <tr><td>Real-time protection</td><td class="highlight-col good">✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>ML engine</td><td class="highlight-col good">✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Sandbox</td><td class="highlight-col good">✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Memory / fileless scan</td><td class="highlight-col bad">❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Rootkit detection</td><td class="highlight-col bad">❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Web protection</td><td class="highlight-col bad">❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Price</td><td class="highlight-col good">Free</td><td>$60/yr</td><td>$80/yr</td><td>Free</td></tr>
-              <tr><td>Open architecture</td><td class="highlight-col good">✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+              <tr>
+                <td><strong>Operating Level</strong></td>
+                <td class="highlight-col">User mode (Ring-3)</td>
+                <td>Kernel mode (Ring-0)</td>
+                <td>Trade-off</td>
+              </tr>
+              <tr>
+                <td><strong>PE File Detection</strong></td>
+                <td class="highlight-col good">85–90%</td>
+                <td>99%+</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Zero-Day Detection</strong></td>
+                <td class="highlight-col mid">20–50%</td>
+                <td>70–80%</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Rootkit Detection</strong></td>
+                <td class="highlight-col bad">Limited (0–20%)</td>
+                <td>99%+ (kernel hooking)</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Memory Scanning</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ Full process memory</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Fileless Malware</strong></td>
+                <td class="highlight-col bad">❌ Not supported</td>
+                <td>✅ Full coverage</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Behavioral Analysis</strong></td>
+                <td class="highlight-col good">Ring-3 (WMI, filesystem, registry)</td>
+                <td>Ring-0 (kernel callbacks)</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Process Interception</strong></td>
+                <td class="highlight-col mid">Polling (0.5s intervals)</td>
+                <td>Kernel callbacks (instant)</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Driver Installation</strong></td>
+                <td class="highlight-col good">❌ No kernel driver</td>
+                <td>✅ Requires kernel driver</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>System Stability Risk</strong></td>
+                <td class="highlight-col good">Low (user mode crash = app restart)</td>
+                <td>High (kernel crash = BSOD)</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Compatibility</strong></td>
+                <td class="highlight-col good">High (no kernel conflicts)</td>
+                <td>Medium (driver conflicts possible)</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Transparency</strong></td>
+                <td class="highlight-col good">Full source visibility</td>
+                <td>Closed source</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Customization</strong></td>
+                <td class="highlight-col good">Retrain ML, edit YARA, modify rules</td>
+                <td>Limited (presets only)</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Performance Impact</strong></td>
+                <td class="highlight-col good">2–5% idle, 10–15% active</td>
+                <td>3–8% idle, 15–25% active</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Scan Speed (10MB file)</strong></td>
+                <td class="highlight-col good">2–3 seconds</td>
+                <td>1–2 seconds</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Real-Time Blocking Speed</strong></td>
+                <td class="highlight-col mid">2.5–3 seconds</td>
+                <td>< 0.5 seconds</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>YARA Rules</strong></td>
+                <td class="highlight-col good">5,255+ (open database)</td>
+                <td>Proprietary signatures</td>
+                <td>Tie</td>
+              </tr>
+              <tr>
+                <td><strong>ML Model</strong></td>
+                <td class="highlight-col good">LightGBM (15 features, retrainable)</td>
+                <td>Proprietary neural networks</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Sandbox</strong></td>
+                <td class="highlight-col good">✅ FakeNet + FakeRegistry</td>
+                <td>✅ Full VM sandbox</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Web Protection</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ URL filtering, phishing</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Email Protection</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ Email scanning</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Network Traffic Inspection</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ SSL/TLS interception</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Firewall</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ Built-in firewall</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>VPN</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ Secure Connection VPN</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Password Manager</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ Built-in</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Parental Controls</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ Safe Kids</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Cloud Backup</strong></td>
+                <td class="highlight-col bad">❌ Not available</td>
+                <td>✅ Included</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Multi-Platform</strong></td>
+                <td class="highlight-col bad">Windows only</td>
+                <td>Windows, macOS, Android, iOS</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Support</strong></td>
+                <td class="highlight-col mid">Community (GitHub)</td>
+                <td>24/7 professional</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Price</strong></td>
+                <td class="highlight-col good">Free (open source)</td>
+                <td>$60–$150/year</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>License</strong></td>
+                <td class="highlight-col good">Unlimited devices</td>
+                <td>1–10 devices (tier-dependent)</td>
+                <td>DeepAtom</td>
+              </tr>
             </tbody>
           </table>
         </div>
-        <p class="table-note reveal">DeepAtom's edge is transparency and customization: retrain the model, extend the behavioral rules, or audit exactly how a verdict was reached. A full breakdown will land on a dedicated comparison page soon.</p>
+
+        <div class="reveal" style="max-width:900px; margin:40px auto 0;">
+          <h3>Key Takeaways</h3>
+          <div class="grid grid-2" style="margin-top:24px;">
+            <div class="card">
+              <h4>✅ DeepAtom Wins On:</h4>
+              <ul>
+                <li><strong>Stability:</strong> No kernel driver = no BSOD risk</li>
+                <li><strong>Transparency:</strong> Full source code visibility</li>
+                <li><strong>Customization:</strong> Retrain ML, edit YARA rules</li>
+                <li><strong>Performance:</strong> Lower CPU/RAM usage</li>
+                <li><strong>Price:</strong> Free and open source</li>
+                <li><strong>Privacy:</strong> No telemetry, works fully offline</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h4>✅ Kaspersky Wins On:</h4>
+              <ul>
+                <li><strong>Detection Rate:</strong> 99%+ vs 85–90%</li>
+                <li><strong>Rootkit Detection:</strong> Kernel-level hooking</li>
+                <li><strong>Memory Scanning:</strong> Full process inspection</li>
+                <li><strong>Fileless Malware:</strong> Complete coverage</li>
+                <li><strong>Speed:</strong> Instant blocking vs 2.5s delay</li>
+                <li><strong>Features:</strong> Firewall, VPN, password manager, web protection</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:24px; background: var(--bg-tertiary); border-color: var(--green-dim);">
+            <h4>🎯 When to Choose DeepAtom:</h4>
+            <ul>
+              <li>You want <strong>full control</strong> over your antivirus logic</li>
+              <li>You need <strong>transparency</strong> — audit every detection decision</li>
+              <li>You prioritize <strong>system stability</strong> (no kernel drivers)</li>
+              <li>You want to <strong>learn</strong> how modern AV engines work</li>
+              <li>You're on a <strong>budget</strong> (free forever)</li>
+              <li>You value <strong>privacy</strong> (no telemetry, offline-first)</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:24px;">
+            <h4>🎯 When to Choose Kaspersky:</h4>
+            <ul>
+              <li>You need <strong>maximum detection rate</strong> (99%+)</li>
+              <li>You face <strong>advanced threats</strong> (rootkits, fileless malware)</li>
+              <li>You want <strong>all-in-one</strong> protection (firewall, VPN, web filter)</li>
+              <li>You need <strong>professional support</strong> (24/7 helpdesk)</li>
+              <li>You require <strong>multi-platform</strong> coverage</li>
+              <li>You prefer <strong>set-and-forget</strong> solutions</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="table-note reveal" style="margin-top:40px; max-width:900px; margin-left:auto; margin-right:auto;">
+          <strong>Bottom line:</strong> DeepAtom is a specialized Ring-3 PE threat detector — transparent, customizable, and stable. Kaspersky is a full-featured Ring-0 security suite with kernel-level access. Both have their place. DeepAtom won't replace enterprise AV for high-risk environments, but for developers, researchers, and users who want control — it's a compelling alternative.
+        </p>
       </div>
     </section>
 
