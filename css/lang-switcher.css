@@ -1,0 +1,119 @@
+/* Language Switcher Styles */
+
+.lang-switcher {
+  position: relative;
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.lang-btn:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--green-dim);
+}
+
+.lang-flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang-code {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  min-width: 160px;
+  overflow: hidden;
+}
+
+.lang-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: inherit;
+  text-align: left;
+}
+
+.lang-option:hover {
+  background: var(--bg-tertiary);
+}
+
+.lang-option:active {
+  background: var(--bg-primary);
+}
+
+.lang-option .lang-flag {
+  font-size: 18px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .lang-switcher {
+    margin-right: 12px;
+  }
+
+  .lang-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .lang-dropdown {
+    right: -10px;
+  }
+}
+
+/* Mobile menu open state */
+@media (max-width: 768px) {
+  .nav-open .lang-switcher {
+    order: -1;
+    margin-bottom: 20px;
+  }
+
+  .nav-open .lang-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
