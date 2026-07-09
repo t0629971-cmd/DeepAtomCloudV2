@@ -145,6 +145,239 @@
       </div>
     </section>
 
+    <!-- ================= СРАВНЕНИЕ RING-3 VS RING-0 ================= -->
+    <section class="section-pad" id="comparison">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Ring-3 vs Ring-0</div>
+          <h2>DeepAtom vs Kaspersky: Сравнение архитектур</h2>
+          <p>DeepAtom работает в Ring-3 (пользовательский режим) для стабильности и прозрачности. Kaspersky использует Ring-0 (режим ядра) для глубокого доступа к системе. Вот что это означает на практике.</p>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:30%">Функция / Возможность</th>
+                <th class="highlight-col" style="width:23%">DeepAtom (Ring-3)</th>
+                <th style="width:23%">Kaspersky (Ring-0)</th>
+                <th style="width:24%">Победитель</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Уровень работы</strong></td>
+                <td class="highlight-col">Пользовательский режим (Ring-3)</td>
+                <td>Режим ядра (Ring-0)</td>
+                <td>Компромисс</td>
+              </tr>
+              <tr>
+                <td><strong>Обнаружение PE-файлов</strong></td>
+                <td class="highlight-col good">85–90%</td>
+                <td>99%+</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Zero-Day обнаружение</strong></td>
+                <td class="highlight-col mid">20–50%</td>
+                <td>70–80%</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Обнаружение руткитов</strong></td>
+                <td class="highlight-col bad">Ограничено (0–20%)</td>
+                <td>99%+ (перехват на уровне ядра)</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Сканирование памяти</strong></td>
+                <td class="highlight-col bad">❌ Недоступно</td>
+                <td>✅ Полное сканирование памяти процессов</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Fileless-угрозы</strong></td>
+                <td class="highlight-col bad">❌ Не поддерживается</td>
+                <td>✅ Полное покрытие</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Поведенческий анализ</strong></td>
+                <td class="highlight-col good">Ring-3 (WMI, файлы, реестр)</td>
+                <td>Ring-0 (callback на уровне ядра)</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Перехват процессов</strong></td>
+                <td class="highlight-col mid">Опрос (интервал 0.5с)</td>
+                <td>Callback ядра (мгновенно)</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Установка драйвера</strong></td>
+                <td class="highlight-col good">❌ Без драйвера ядра</td>
+                <td>✅ Требуется драйвер ядра</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Риск нестабильности системы</strong></td>
+                <td class="highlight-col good">Низкий (сбой = перезапуск приложения)</td>
+                <td>Высокий (сбой = синий экран)</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Совместимость</strong></td>
+                <td class="highlight-col good">Высокая (нет конфликтов с ядром)</td>
+                <td>Средняя (возможны конфликты драйверов)</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Прозрачность</strong></td>
+                <td class="highlight-col good">Полная видимость исходного кода</td>
+                <td>Закрытый исходный код</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Кастомизация</strong></td>
+                <td class="highlight-col good">Переобучение ML, редактирование YARA, изменение правил</td>
+                <td>Ограничено (только пресеты)</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Влияние на производительность</strong></td>
+                <td class="highlight-col good">2–5% в простое, 10–15% активно</td>
+                <td>3–8% в простое, 15–25% активно</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Скорость сканирования (10МБ)</strong></td>
+                <td class="highlight-col good">2–3 секунды</td>
+                <td>1–2 секунды</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Скорость блокировки в реальном времени</strong></td>
+                <td class="highlight-col mid">2.5–3 секунды</td>
+                <td>< 0.5 секунды</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>YARA-правила</strong></td>
+                <td class="highlight-col good">5,255+ (открытая база)</td>
+                <td>Проприетарные сигнатуры</td>
+                <td>Ничья</td>
+              </tr>
+              <tr>
+                <td><strong>ML-модель</strong></td>
+                <td class="highlight-col good">LightGBM (15 признаков, переобучаемая)</td>
+                <td>Проприетарные нейросети</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Песочница</strong></td>
+                <td class="highlight-col good">✅ FakeNet + FakeRegistry</td>
+                <td>✅ Полная VM-песочница</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Веб-защита</strong></td>
+                <td class="highlight-col bad">❌ Недоступно</td>
+                <td>✅ Фильтрация URL, антифишинг</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Защита электронной почты</strong></td>
+                <td class="highlight-col bad">❌ Недоступно</td>
+                <td>✅ Сканирование почты</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Файрвол</strong></td>
+                <td class="highlight-col bad">❌ Недоступно</td>
+                <td>✅ Встроенный файрвол</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Поддержка</strong></td>
+                <td class="highlight-col mid">Сообщество (GitHub)</td>
+                <td>Профессиональная 24/7</td>
+                <td>Kaspersky</td>
+              </tr>
+              <tr>
+                <td><strong>Цена</strong></td>
+                <td class="highlight-col good">Бесплатно (open source)</td>
+                <td>$60–$150/год</td>
+                <td>DeepAtom</td>
+              </tr>
+              <tr>
+                <td><strong>Лицензия</strong></td>
+                <td class="highlight-col good">Неограниченное количество устройств</td>
+                <td>1–10 устройств (зависит от тарифа)</td>
+                <td>DeepAtom</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="reveal" style="max-width:900px; margin:40px auto 0;">
+          <h3>Основные выводы</h3>
+          <div class="grid grid-2" style="margin-top:24px;">
+            <div class="card">
+              <h4>✅ DeepAtom выигрывает в:</h4>
+              <ul>
+                <li><strong>Стабильность:</strong> Без драйвера ядра = без риска синего экрана</li>
+                <li><strong>Прозрачность:</strong> Полная видимость исходного кода</li>
+                <li><strong>Кастомизация:</strong> Переобучение ML, редактирование YARA</li>
+                <li><strong>Производительность:</strong> Меньше нагрузка на CPU/RAM</li>
+                <li><strong>Цена:</strong> Бесплатно и open source</li>
+                <li><strong>Приватность:</strong> Без телеметрии, работает полностью офлайн</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h4>✅ Kaspersky выигрывает в:</h4>
+              <ul>
+                <li><strong>Процент обнаружения:</strong> 99%+ против 85–90%</li>
+                <li><strong>Обнаружение руткитов:</strong> Перехват на уровне ядра</li>
+                <li><strong>Сканирование памяти:</strong> Полная инспекция процессов</li>
+                <li><strong>Fileless-угрозы:</strong> Полное покрытие</li>
+                <li><strong>Скорость:</strong> Мгновенная блокировка против 2.5с задержки</li>
+                <li><strong>Функции:</strong> Файрвол, VPN, менеджер паролей, веб-защита</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:24px; background: var(--bg-tertiary); border-color: var(--green-dim);">
+            <h4>🎯 Когда выбрать DeepAtom:</h4>
+            <ul>
+              <li>Вам нужен <strong>полный контроль</strong> над логикой антивируса</li>
+              <li>Вам нужна <strong>прозрачность</strong> — аудит каждого решения об обнаружении</li>
+              <li>Вы цените <strong>стабильность системы</strong> (без драйверов ядра)</li>
+              <li>Вы хотите <strong>изучать</strong>, как работают современные антивирусы</li>
+              <li>Ограниченный <strong>бюджет</strong> (бесплатно навсегда)</li>
+              <li>Вы цените <strong>приватность</strong> (без телеметрии, офлайн-первый)</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:24px;">
+            <h4>🎯 Когда выбрать Kaspersky:</h4>
+            <ul>
+              <li>Нужен <strong>максимальный процент обнаружения</strong> (99%+)</li>
+              <li>Столкновение с <strong>продвинутыми угрозами</strong> (руткиты, fileless)</li>
+              <li>Нужна <strong>комплексная защита</strong> (файрвол, VPN, веб-фильтр)</li>
+              <li>Нужна <strong>профессиональная поддержка</strong> (24/7 техподдержка)</li>
+              <li>Требуется <strong>мультиплатформенность</strong></li>
+              <li>Предпочитаете решения <strong>"поставил и забыл"</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="table-note reveal" style="margin-top:40px; max-width:900px; margin-left:auto; margin-right:auto;">
+          <strong>Итог:</strong> DeepAtom — это специализированный Ring-3 детектор PE-угроз, прозрачный, кастомизируемый и стабильный. Kaspersky — это полнофункциональный Ring-0 защитный комплекс с доступом к ядру. У обоих есть своё место. DeepAtom не заменит корпоративный антивирус в высокорисковых средах, но для разработчиков, исследователей и пользователей, которым нужен контроль — это убедительная альтернатива.
+        </p>
+      </div>
+    </section>
+
     <section class="section-pad">
       <div class="container">
         <div class="cta-banner reveal">
@@ -175,6 +408,7 @@
             <li><a href="features-ru.html">Возможности</a></li>
             <li><a href="download-ru.html">Скачать</a></li>
             <li><a href="download-ru.html#changelog">История изменений</a></li>
+            <li><a href="features-ru.html#comparison">Сравнить</a></li>
           </ul>
         </div>
         <div class="footer-col">
