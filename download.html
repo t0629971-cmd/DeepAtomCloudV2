@@ -56,21 +56,21 @@
           <div>
             <h2 style="margin-bottom:12px;">DeepAtom for Windows</h2>
             <p style="color:var(--text-secondary); margin-bottom:28px;">
-              A single installer with the scanner, real-time guard, proactive defense, and sandbox module included.
+              Download the archive with the program and all necessary files. Extract and run — no installation required.
             </p>
-            <a href="downloads/DeepAtom-2.1-Setup.exe" download class="btn btn-primary btn-lg btn-block" id="download-btn">
+            <a href="https://github.com/t0629971-cmd/DeepAtomCloudV2/releases/download/DeepAtomV2.1/release2.1.rar" download class="btn btn-primary btn-lg btn-block">
               <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 21h14"/></svg>
-              Download DeepAtom 2.1 for Windows
+              Download release2.1.rar (~140 MB)
             </a>
-            <p class="table-note" style="text-align:center; margin-top:14px;">SHA256 checksums are published alongside every release for verification.</p>
+            <p class="table-note" style="text-align:center; margin-top:14px;">Archive contains DeepAtom.exe and yara_rules_combined.yar. SHA256 checksum published alongside the release for verification.</p>
           </div>
 
           <ul class="download-info-list">
             <li><span>Version</span><strong>2.1</strong></li>
             <li><span>Released</span><strong>2026-07-09</strong></li>
-            <li><span>File size</span><strong>~135 MB</strong></li>
+            <li><span>Archive size</span><strong>~140 MB</strong></li>
+            <li><span>Format</span><strong>RAR</strong></li>
             <li><span>Platform</span><strong>Win 7–11 (x64)</strong></li>
-            <li><span>Runtime</span><strong>Python 3.8+</strong></li>
             <li><span>License</span><strong>Free</strong></li>
           </ul>
         </div>
@@ -95,8 +95,7 @@
               <li>Windows 7 (x64)</li>
               <li>Dual-core 2.0 GHz CPU</li>
               <li>2 GB RAM</li>
-              <li>500 MB free disk space</li>
-              <li>Python 3.8+</li>
+              <li>200 MB free disk space</li>
             </ul>
           </div>
           <div class="card req-card rec">
@@ -109,7 +108,6 @@
               <li>Quad-core 2.5+ GHz CPU</li>
               <li>4 GB RAM</li>
               <li>SSD storage</li>
-              <li>Python 3.8+ with pip</li>
             </ul>
           </div>
         </div>
@@ -128,33 +126,32 @@
           <div class="step">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h4>Install Python 3.8+</h4>
-              <p>Download and install Python from the official source, and make sure it's added to your PATH.</p>
-              <pre><code>https://www.python.org/downloads/</code></pre>
+              <h4>Download the archive</h4>
+              <p>Download release2.1.rar (~140 MB) from the button above.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
             <div class="step-body">
-              <h4>Install dependencies</h4>
-              <p>From the DeepAtom folder, install the required packages.</p>
-              <pre><code>pip install -r requirements.txt</code></pre>
+              <h4>Extract the archive</h4>
+              <p>Use WinRAR, 7-Zip, or any archiver to extract. Inside you'll find:</p>
+              <pre><code>release2.1\
+├── DeepAtom.exe
+└── yara_rules_combined.yar</code></pre>
             </div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h4>Enable Proactive Defense (optional)</h4>
-              <p>Adds behavioral monitoring on top of the core scanner.</p>
-              <pre><code>pip install wmi watchdog psutil pywin32</code></pre>
+              <h4>Launch DeepAtom</h4>
+              <p>Double-click DeepAtom.exe to start the application. No installation required.</p>
             </div>
           </div>
           <div class="step">
             <div class="step-num">4</div>
             <div class="step-body">
-              <h4>Launch DeepAtom</h4>
-              <p>Start the application and run your first scan.</p>
-              <pre><code>python DeepAtom.py</code></pre>
+              <h4>Run your first scan</h4>
+              <p>The GUI will open. Select a folder or file to scan, and DeepAtom will analyze it using all 7 protection layers.</p>
             </div>
           </div>
         </div>
