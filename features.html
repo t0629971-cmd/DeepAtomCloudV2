@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — DeepAtom Antivirus</title>
+  <meta name="description" content="Explore DeepAtom's seven protection layers: machine learning detection, proactive defense, real-time guard, multi-layer scanning, YARA autogen, sandbox and cloud integration.">
+  <link rel="canonical" href="https://deepatom.sytes.net/features.html">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+        DeepAtom
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="features.html" class="active">Features</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="docs.html" class="btn btn-ghost">Documentation</a>
+        <a href="download.html" class="btn btn-primary">Download Free</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Full feature set</div>
+        <h1>Seven layers of protection, working as one</h1>
+        <p>From static ML detection to live behavioral monitoring — every DeepAtom module is designed to work together without slowing your PC down.</p>
+      </div>
+    </section>
+
+    <!-- ================= FEATURE DETAILS ================= -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="grid grid-3">
+
+          <div class="card card-accent reveal d1">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a3.5 3.5 0 0 0-3.5 3.5V6a3 3 0 0 0-2 5 3 3 0 0 0 2 5v.5A3.5 3.5 0 0 0 9.5 20"/><path d="M14.5 2A3.5 3.5 0 0 1 18 5.5V6a3 3 0 0 1 2 5 3 3 0 0 1-2 5v.5a3.5 3.5 0 0 1-3.5 3.5"/><path d="M9.5 2v18M14.5 2v18"/></svg>
+            </div>
+            <h3>Machine Learning Engine</h3>
+            <p>A LightGBM RandomForest classifier trained to recognize malicious PE files by their structure, not just their signature.</p>
+            <ul>
+              <li>15 static features extracted per file</li>
+              <li>85–90% accuracy on known malware</li>
+              <li>~50ms average prediction time</li>
+              <li>Retrainable on your own dataset</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent reveal d2">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5.2 3.8 9.4 9 10 5.2-.6 9-4.8 9-10V6l-9-4Z"/></svg>
+            </div>
+            <h3>Proactive Defense <span class="tag-new">New</span></h3>
+            <p>Ring-3 behavioral analysis that watches what processes actually do, in real time — not just what they look like on disk.</p>
+            <ul>
+              <li>4 behavioral rules: ransomware, injection, tampering, persistence</li>
+              <li>3 telemetry collectors: WMI, filesystem, registry</li>
+              <li>0–100 threat scoring, 100 = instant block</li>
+              <li>Detects attacks with no known signature</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent reveal d3">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg>
+            </div>
+            <h3>Real-Time Guard</h3>
+            <p>A lightweight background watchdog that inspects every process the moment it launches.</p>
+            <ul>
+              <li>Monitors 100% of process launches, 24/7</li>
+              <li>Configurable interval: 0.5–5 seconds</li>
+              <li>Blocks confirmed threats in 2.5–3 seconds</li>
+              <li>2–5% CPU idle, 10–15% CPU active</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent reveal d4">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3>Multi-Layer Scanning</h3>
+            <p>Every scanned file passes through four independent checks before a verdict is reached.</p>
+            <ul>
+              <li>Layer 1 — SHA256 blacklist (25,000+ hashes)</li>
+              <li>Layer 2 — YARA signatures (5,255+ rules)</li>
+              <li>Layer 3 — Feature extraction (15 features)</li>
+              <li>Layer 4 — ML classification (LightGBM)</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent reveal d5">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"/><path d="m14 7 3 3"/><path d="M5 6v4M19 14v4M10 2v2M7 8H3M21 16h-4M11 3H9"/></svg>
+            </div>
+            <h3>YARA AutoGen</h3>
+            <p>Every confirmed ML detection is automatically turned into a reusable signature.</p>
+            <ul>
+              <li>Auto-generates YARA rules from detections</li>
+              <li>Saves directly to the local rule database</li>
+              <li>Hot-reloads the scanner, no restart needed</li>
+              <li>Signature base grows the more DeepAtom is used</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent reveal d6">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v6.5L4.5 18a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 8.5V2"/><path d="M8.5 2h7"/><path d="M7 15h10"/></svg>
+            </div>
+            <h3>Sandbox Analysis</h3>
+            <p>Suspicious files are executed in an isolated environment before they ever touch your real system.</p>
+            <ul>
+              <li>FakeNet blocks outbound network calls</li>
+              <li>FakeRegistry protects the real registry</li>
+              <li>Automatic rollback after analysis completes</li>
+              <li>Safe way to test unknown executables</li>
+            </ul>
+          </div>
+
+          <div class="card card-accent reveal d7">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+            </div>
+            <h3>Cloud Integration</h3>
+            <p>An optional cloud layer that shares threat intelligence between DeepAtom installs.</p>
+            <ul>
+              <li>Only SHA256 hashes are transmitted, never files</li>
+              <li>Lookup unknown hashes against the community database</li>
+              <li>Contributes anonymized detection statistics</li>
+              <li>Can be fully disabled for offline use</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DETECTION TABLE ================= -->
+    <section class="section-pad" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Honest numbers</div>
+          <h2>Where DeepAtom excels — and where it doesn't</h2>
+          <p>DeepAtom specializes in Windows PE malware. Here's the detection rate by threat category, no marketing gloss.</p>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr><th>Threat type</th><th>Detection rate</th><th>Assessment</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>PE malware (known)</td><td>85–90%</td><td class="good">Excellent</td></tr>
+              <tr><td>Ransomware</td><td>85–90%</td><td class="good">Excellent</td></tr>
+              <tr><td>Packed files</td><td>80–85%</td><td class="good">Good</td></tr>
+              <tr><td>PE malware (new / zero-day)</td><td>20–50%</td><td class="mid">Moderate</td></tr>
+              <tr><td>Rootkits</td><td>0–20%</td><td class="bad">Limited</td></tr>
+              <tr><td>Fileless malware</td><td>0–10%</td><td class="bad">Not supported</td></tr>
+              <tr><td>Office macros</td><td>0%</td><td class="bad">Not supported</td></tr>
+              <tr><td>Scripts (JS / VBS / PowerShell)</td><td>0%</td><td class="bad">Not supported</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note reveal">Overall coverage across all threat types: ~40–55%. PE detection — DeepAtom's primary specialization — sits at 85–90%. Memory scanning, kernel-level rootkit detection, and script analysis are on the <a href="download.html#changelog">roadmap</a>.</p>
+      </div>
+    </section>
+
+    <!-- ================= COMPARISON TABLE ================= -->
+    <section class="section-pad" id="comparison">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">vs. the competition</div>
+          <h2>How DeepAtom compares</h2>
+          <p>DeepAtom isn't trying to replace enterprise-grade suites — it's an open, transparent engine built for PE threat detection.</p>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="highlight-col">DeepAtom</th>
+                <th>Kaspersky</th>
+                <th>Bitdefender</th>
+                <th>Windows Defender</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>PE detection</td><td class="highlight-col good">85–90%</td><td>99%</td><td>99%</td><td>98%</td></tr>
+              <tr><td>Zero-day detection</td><td class="highlight-col mid">20–50%</td><td>70%</td><td>75%</td><td>60%</td></tr>
+              <tr><td>Real-time protection</td><td class="highlight-col good">✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>ML engine</td><td class="highlight-col good">✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Sandbox</td><td class="highlight-col good">✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Memory / fileless scan</td><td class="highlight-col bad">❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Rootkit detection</td><td class="highlight-col bad">❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Web protection</td><td class="highlight-col bad">❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+              <tr><td>Price</td><td class="highlight-col good">Free</td><td>$60/yr</td><td>$80/yr</td><td>Free</td></tr>
+              <tr><td>Open architecture</td><td class="highlight-col good">✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note reveal">DeepAtom's edge is transparency and customization: retrain the model, extend the behavioral rules, or audit exactly how a verdict was reached. A full breakdown will land on a dedicated comparison page soon.</p>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>See it for yourself</h2>
+          <p>Download DeepAtom and run your first scan in under two minutes.</p>
+          <div class="hero-cta" style="margin-bottom:0;">
+            <a href="download.html" class="btn btn-primary btn-lg">Download DeepAtom 2.1</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+            DeepAtom
+          </a>
+          <p>Machine learning antivirus for Windows. Built for home users, small teams, and developers who want an open, customizable defense engine.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="download.html#changelog">Changelog</a></li>
+            <li><a href="features.html#comparison">Compare</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="docs.html#getting-started">Getting Started</a></li>
+            <li><a href="docs.html#api-reference">API Reference</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://deepatom.sytes.net">deepatom.sytes.net</a></li>
+            <li><a href="faq.html">Support</a></li>
+            <li><a href="docs.html#architecture">Architecture</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> DeepAtom. All rights reserved.</span>
+        <span class="footer-domain">deepatom.sytes.net</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

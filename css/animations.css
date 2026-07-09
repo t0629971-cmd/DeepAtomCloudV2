@@ -1,0 +1,109 @@
+/* =========================================================
+   DeepAtom — Animations
+   ========================================================= */
+
+@keyframes pulseDot {
+  0%, 100% { box-shadow: 0 0 0 0 var(--green-glow); }
+  50% { box-shadow: 0 0 0 5px transparent; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceArrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes scanLine {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* Hero entrance choreography */
+.hero-badge,
+.hero h1,
+.hero-sub,
+.hero-cta,
+.hero-meta {
+  opacity: 0;
+  animation: fadeInUp 0.8s var(--ease) forwards;
+}
+
+.hero-badge { animation-delay: 0.05s; }
+.hero h1 { animation-delay: 0.15s; }
+.hero-sub { animation-delay: 0.28s; }
+.hero-cta { animation-delay: 0.4s; }
+.hero-meta { animation-delay: 0.5s; }
+
+.stats-strip {
+  opacity: 0;
+  animation: fadeInUp 0.8s var(--ease) forwards;
+  animation-delay: 0.55s;
+}
+
+/* Button icon micro-interactions */
+.btn-primary svg.dl-icon {
+  animation: bounceArrow 1.6s ease-in-out infinite;
+}
+
+/* Card float accents used on feature icons */
+.card-icon svg { transition: transform 0.4s var(--ease); }
+
+/* Scan-line effect for the "live scan" demo widget */
+.scan-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-frame::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, transparent, rgba(46, 160, 67, 0.35), transparent);
+  animation: scanLine 2.6s linear infinite;
+}
+
+/* Staggered reveal helper delays */
+.reveal.d1 { transition-delay: 0.05s; }
+.reveal.d2 { transition-delay: 0.12s; }
+.reveal.d3 { transition-delay: 0.19s; }
+.reveal.d4 { transition-delay: 0.26s; }
+.reveal.d5 { transition-delay: 0.33s; }
+.reveal.d6 { transition-delay: 0.4s; }
+.reveal.d7 { transition-delay: 0.47s; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-badge, .hero h1, .hero-sub, .hero-cta, .hero-meta, .stats-strip {
+    opacity: 1;
+  }
+}

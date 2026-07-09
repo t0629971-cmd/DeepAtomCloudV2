@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — DeepAtom Antivirus</title>
+  <meta name="description" content="Frequently asked questions about DeepAtom: installation, system requirements, machine learning detection, proactive defense, and safety.">
+  <link rel="canonical" href="https://deepatom.sytes.net/faq.html">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+        DeepAtom
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html" class="active">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="docs.html" class="btn btn-ghost">Documentation</a>
+        <a href="download.html" class="btn btn-primary">Download Free</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Questions &amp; answers</div>
+        <h1>Frequently asked questions</h1>
+        <p>Can't find what you're looking for? Check the <a href="docs.html">documentation</a> for deeper technical details.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" style="padding-top:24px;">
+      <div class="container">
+        <div class="faq-list">
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              What is DeepAtom?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                DeepAtom is an advanced machine learning-powered antivirus for Windows. It combines static analysis, behavioral monitoring, and proactive defense to detect and block malware — with a particular focus on Windows PE (executable) threats.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              How do I install DeepAtom?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Install Python 3.8+, run <code>pip install -r requirements.txt</code>, then launch <code>python DeepAtom.py</code>. See the <a href="download.html">Download page</a> for the full step-by-step guide, including the optional Proactive Defense dependencies.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              What are the system requirements?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Minimum: Windows 7 (x64), dual-core 2.0 GHz CPU, 2 GB RAM, 500 MB free disk space. Recommended: Windows 10/11 (x64), quad-core 2.5+ GHz CPU, 4 GB RAM, and an SSD.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              Is DeepAtom free?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. DeepAtom is free for personal and commercial use.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              How does the ML engine work?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                DeepAtom extracts 15 static features from each PE file and feeds them into a LightGBM RandomForest classifier trained on thousands of labeled samples, reaching 85–90% accuracy on known malware with a prediction time of roughly 50ms per file.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              What is Proactive Defense?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Proactive Defense is a Ring-3 behavioral analysis system that monitors processes, files, and the registry in real time to detect ransomware, code injection, antivirus tampering, and persistence mechanisms — even when no known signature exists.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              What's the detection rate?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                85–90% for known PE malware, 80–85% for packed files, and 20–50% for zero-day threats. DeepAtom specializes in PE file analysis; see the full <a href="features.html">detection breakdown</a> on the Features page.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              Can I customize DeepAtom?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes — DeepAtom has an open architecture. You can retrain the ML model on your own dataset, add or edit YARA rules, adjust the behavioral rules used by Proactive Defense, and modify the codebase directly. See the <a href="docs.html#training-ml">Training the ML Model</a> guide.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              Is it safe to use?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. All scanning and analysis happens locally on your machine. The optional cloud feature only ever transmits file hashes, never files themselves, and can be disabled entirely in Settings.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <button class="faq-question">
+              How do I update the signature database?
+              <span class="plus"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                YARA AutoGen automatically creates new rules from confirmed detections and reloads the scanner without a restart. You can also manually update the SHA256 blacklist and YARA rule files at any time.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" style="padding-top:0;">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Still have questions?</h2>
+          <p>Dig into the technical details in the documentation, or grab the latest release and try it yourself.</p>
+          <div class="hero-cta" style="margin-bottom:0;">
+            <a href="docs.html" class="btn btn-ghost btn-lg">Read the Docs</a>
+            <a href="download.html" class="btn btn-primary btn-lg">Download Free</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+            DeepAtom
+          </a>
+          <p>Machine learning antivirus for Windows. Built for home users, small teams, and developers who want an open, customizable defense engine.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="download.html#changelog">Changelog</a></li>
+            <li><a href="features.html#comparison">Compare</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="docs.html#getting-started">Getting Started</a></li>
+            <li><a href="docs.html#api-reference">API Reference</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://deepatom.sytes.net">deepatom.sytes.net</a></li>
+            <li><a href="faq.html">Support</a></li>
+            <li><a href="docs.html#architecture">Architecture</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> DeepAtom. All rights reserved.</span>
+        <span class="footer-domain">deepatom.sytes.net</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

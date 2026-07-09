@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — DeepAtom Antivirus</title>
+  <meta name="description" content="DeepAtom documentation: getting started, user manual, architecture guide, API reference, and ML model training.">
+  <link rel="canonical" href="https://deepatom.sytes.net/docs.html">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+        DeepAtom
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="download.html">Download</a>
+        <a href="docs.html" class="active">Docs</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="docs.html" class="btn btn-ghost">Documentation</a>
+        <a href="download.html" class="btn btn-primary">Download Free</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Documentation</div>
+        <h1>Everything you need to run DeepAtom</h1>
+        <p>Setup guides, architecture deep-dives, and API references for building on top of DeepAtom.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" style="padding-top:24px;">
+      <div class="container docs-layout">
+
+        <aside class="docs-sidebar">
+          <h4>Overview</h4>
+          <ul>
+            <li><a href="#getting-started" class="active">Getting Started</a></li>
+            <li><a href="#user-manual">User Manual</a></li>
+          </ul>
+          <h4>Internals</h4>
+          <ul>
+            <li><a href="#architecture">Architecture Guide</a></li>
+            <li><a href="#training-ml">Training the ML Model</a></li>
+          </ul>
+          <h4>Reference</h4>
+          <ul>
+            <li><a href="#api-reference">API Reference</a></li>
+            <li><a href="faq.html">FAQ →</a></li>
+          </ul>
+        </aside>
+
+        <div class="docs-content">
+
+          <section id="getting-started">
+            <h2><span class="doc-num">01</span> Getting Started</h2>
+            <p>DeepAtom runs as a standalone Python application on Windows. There's nothing to compile — install the dependencies and launch the GUI.</p>
+
+            <h4>Prerequisites</h4>
+            <ul>
+              <li>Windows 7, 8, 10 or 11 (x64)</li>
+              <li>Python 3.8 or newer</li>
+              <li>2 GB RAM minimum (4 GB recommended)</li>
+            </ul>
+
+            <h4>Quick install</h4>
+            <pre><code>pip install -r requirements.txt
+python DeepAtom.py</code></pre>
+
+            <div class="callout">
+              <strong>Tip:</strong> Enable Proactive Defense by installing <code>wmi</code>, <code>watchdog</code>, <code>psutil</code> and <code>pywin32</code> — see the <a href="download.html">Download page</a> for the full step-by-step guide.
+            </div>
+
+            <h4>First scan</h4>
+            <p>Open DeepAtom, choose <strong>Quick Scan</strong> for a fast sweep of common infection points, or drag and drop a file/folder directly onto the window for an on-demand check.</p>
+          </section>
+
+          <section id="user-manual">
+            <h2><span class="doc-num">02</span> User Manual</h2>
+            <p>The DeepAtom interface is organized around three scan modes and three protection toggles.</p>
+
+            <h4>Scan modes</h4>
+            <ul>
+              <li><strong>Quick Scan</strong> — startup folders, running processes, temp directories</li>
+              <li><strong>Full Scan</strong> — every file on selected drives</li>
+              <li><strong>Custom Scan</strong> — a specific file, folder, or list of paths</li>
+            </ul>
+
+            <h4>Protection toggles</h4>
+            <ul>
+              <li><strong>Real-Time Guard</strong> — background monitoring of new processes</li>
+              <li><strong>Proactive Defense</strong> — behavioral analysis for ransomware, injection, tampering, and persistence</li>
+              <li><strong>System32 Guard</strong> — extra write-protection for critical system folders</li>
+            </ul>
+
+            <h4>Quarantine &amp; history</h4>
+            <p>Every detection is moved to an encrypted quarantine folder rather than deleted outright, so you can restore a false positive with one click. The History tab keeps a searchable log of every scan DeepAtom has run.</p>
+          </section>
+
+          <section id="architecture">
+            <h2><span class="doc-num">03</span> Architecture Guide</h2>
+            <p>DeepAtom is organized into four cooperating layers:</p>
+
+            <div class="layers" style="margin: 24px 0;">
+              <div class="layer-row">
+                <div class="layer-num">1</div>
+                <div class="layer-body"><strong>Preventive</strong><span>SHA256 blacklist + YARA signatures + Real-Time Guard</span></div>
+              </div>
+              <div class="layer-row">
+                <div class="layer-num">2</div>
+                <div class="layer-body"><strong>Detective</strong><span>ML classification + behavioral monitoring</span></div>
+              </div>
+              <div class="layer-row">
+                <div class="layer-num">3</div>
+                <div class="layer-body"><strong>Analytical</strong><span>Sandbox execution of unknown binaries</span></div>
+              </div>
+              <div class="layer-row">
+                <div class="layer-num">4</div>
+                <div class="layer-body"><strong>Responsive</strong><span>Quarantine + optional cloud threat sharing</span></div>
+              </div>
+            </div>
+
+            <h4>Component stack</h4>
+            <pre><code>GUI (PyQt5)
+    ↓
+Scanner Core (SHA256 + YARA + ML)
+    ↓
+Proactive Defense (WMI + Filesystem + Registry)
+    ↓
+Behavioral Monitor + Sandbox</code></pre>
+
+            <p>The scanner core and the behavioral monitor run independently — disabling one does not disable the other. This is what lets Proactive Defense catch fileless-style attacks that never touch disk long enough for a signature-based scan to see them.</p>
+          </section>
+
+          <section id="training-ml">
+            <h2><span class="doc-num">04</span> Training the ML Model</h2>
+            <p>DeepAtom's classifier is a LightGBM RandomForest model trained on a labeled dataset of PE files.</p>
+
+            <h4>Feature set</h4>
+            <p>Each file is reduced to <strong>15 static features</strong> before it reaches the model — a deliberately compact set chosen for speed (~50ms per prediction) without sacrificing accuracy on the primary target: Windows PE malware.</p>
+            <ul>
+              <li>Header and section-level structural metadata</li>
+              <li>Import/export table characteristics</li>
+              <li>Entropy and packing indicators</li>
+              <li>Resource and overlay attributes</li>
+            </ul>
+
+            <h4>Retraining on your own data</h4>
+            <pre><code># dataset.csv: labeled samples with the 15 extracted features
+python train_model.py --dataset dataset.csv --output model.pkl</code></pre>
+
+            <div class="callout warn">
+              <strong>Note:</strong> Retraining requires a balanced dataset of clean and malicious samples. Poorly labeled data will directly hurt detection accuracy.
+            </div>
+          </section>
+
+          <section id="api-reference">
+            <h2><span class="doc-num">05</span> API Reference</h2>
+            <p>DeepAtom exposes a small local API surface for scripting and automation.</p>
+
+            <h4>Scan a file</h4>
+            <pre><code>from deepatom.scanner import Scanner
+
+scanner = Scanner()
+result = scanner.scan_file("C:/path/to/file.exe")
+
+print(result.verdict)     # "clean" | "malicious" | "suspicious"
+print(result.confidence)  # 0.0 – 1.0
+print(result.layer)       # which layer produced the verdict</code></pre>
+
+            <h4>Cloud hash lookup</h4>
+            <pre><code>GET https://deepatomserver.onrender.com/api/lookup?sha256=&lt;hash&gt;</code></pre>
+            <p>Returns known classification data for a given SHA256 hash. Only hashes are sent — never file contents — and this call can be disabled entirely in Settings → Cloud.</p>
+
+            <h4>Response shape</h4>
+            <pre><code>{
+  "sha256": "…",
+  "known": true,
+  "verdict": "malicious",
+  "family": "ransomware",
+  "first_seen": "2026-05-11"
+}</code></pre>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+            DeepAtom
+          </a>
+          <p>Machine learning antivirus for Windows. Built for home users, small teams, and developers who want an open, customizable defense engine.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="download.html">Download</a></li>
+            <li><a href="download.html#changelog">Changelog</a></li>
+            <li><a href="features.html#comparison">Compare</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="docs.html">Documentation</a></li>
+            <li><a href="docs.html#getting-started">Getting Started</a></li>
+            <li><a href="docs.html#api-reference">API Reference</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://deepatom.sytes.net">deepatom.sytes.net</a></li>
+            <li><a href="faq.html">Support</a></li>
+            <li><a href="docs.html#architecture">Architecture</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> DeepAtom. All rights reserved.</span>
+        <span class="footer-domain">deepatom.sytes.net</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
