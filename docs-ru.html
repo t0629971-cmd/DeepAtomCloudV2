@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Документация — DeepAtom Антивирус</title>
+  <meta name="description" content="Документация DeepAtom: начало работы, архитектура, API и руководства.">
+  <link rel="canonical" href="https://deepatom.sytes.net/docs-ru.html">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/lang-switcher.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index-ru.html" class="logo">
+        <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+        DeepAtom
+      </a>
+      <nav class="main-nav">
+        <a href="index-ru.html">Главная</a>
+        <a href="features-ru.html">Возможности</a>
+        <a href="download-ru.html">Скачать</a>
+        <a href="docs-ru.html" class="active">Документация</a>
+        <a href="faq-ru.html">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="docs-ru.html" class="btn btn-ghost">Документация</a>
+        <a href="download-ru.html" class="btn btn-primary">Скачать бесплатно</a>
+        <button class="nav-toggle" aria-label="Переключить навигацию" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Документация</div>
+        <h1>Всё, что нужно знать о DeepAtom</h1>
+        <p>Руководства, справочники API и архитектурные документы.</p>
+      </div>
+    </section>
+
+    <section class="section-pad" id="getting-started">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Начало работы</div>
+          <h2>Быстрый старт</h2>
+        </div>
+
+        <div class="card reveal" style="max-width:800px; margin:0 auto;">
+          <h3>1. Скачать и установить</h3>
+          <p>Скачайте оба файла с <a href="download-ru.html">страницы загрузок</a>:</p>
+          <ul>
+            <li>DeepAtom.exe (135 МБ)</li>
+            <li>yara_rules_combined.yar (5.83 МБ)</li>
+          </ul>
+          <p>Поместите их в одну папку и запустите DeepAtom.exe.</p>
+
+          <h3>2. Первое сканирование</h3>
+          <p>Откроется GUI с тремя вкладками: Сканер, Карантин и Защита.</p>
+          <pre><code>1. Выберите папку или файл для сканирования
+2. Выберите режим сканирования (Быстрый/Обычный/Глубокий)
+3. Нажмите "Начать сканирование"</code></pre>
+
+          <h3>3. Включить защиту в реальном времени</h3>
+          <p>Перейдите на вкладку "Защита" и включите Real-Time Guard для постоянной защиты.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="architecture">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Архитектура</div>
+          <h2>Как это работает</h2>
+        </div>
+
+        <div class="layers reveal" style="max-width:900px; margin:0 auto;">
+          <div class="layer-row">
+            <div class="layer-num">01</div>
+            <div class="layer-body"><strong>SHA256 Blacklist</strong><span>Мгновенное сравнение с 25 000+ известных хешей</span></div>
+            <div class="layer-time">&lt; 50мс</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">02</div>
+            <div class="layer-body"><strong>YARA Сигнатуры</strong><span>Сопоставление с 5 255+ правилами</span></div>
+            <div class="layer-time">50–100мс</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">03</div>
+            <div class="layer-body"><strong>Извлечение признаков</strong><span>15 статических признаков из PE-структуры</span></div>
+            <div class="layer-time">100–300мс</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">04</div>
+            <div class="layer-body"><strong>ML Классификация</strong><span>LightGBM модель возвращает вердикт</span></div>
+            <div class="layer-time">~50мс</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">05</div>
+            <div class="layer-body"><strong>Облачная репутация</strong><span>Опциональная проверка через API</span></div>
+            <div class="layer-time">2–5с</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">06</div>
+            <div class="layer-body"><strong>Поведенческий анализ</strong><span>Проактивная защита Ring-3</span></div>
+            <div class="layer-time">Реальное время</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">07</div>
+            <div class="layer-body"><strong>Песочница</strong><span>Изолированное выполнение подозрительных файлов</span></div>
+            <div class="layer-time">30–60с</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Дополнительно</div>
+          <h2>Полезные ссылки</h2>
+        </div>
+
+        <div class="grid grid-2 reveal">
+          <div class="card">
+            <h3>GitHub</h3>
+            <p>Исходный код, issues и обсуждения.</p>
+            <a href="https://github.com/t0629971-cmd/DeepAtomCloudV2" class="btn btn-ghost">Открыть репозиторий →</a>
+          </div>
+
+          <div class="card">
+            <h3>FAQ</h3>
+            <p>Часто задаваемые вопросы и ответы.</p>
+            <a href="faq-ru.html" class="btn btn-ghost">Открыть FAQ →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index-ru.html" class="logo">
+            <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
+            DeepAtom
+          </a>
+          <p>Антивирус с машинным обучением для Windows.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Продукт</h4>
+          <ul>
+            <li><a href="features-ru.html">Возможности</a></li>
+            <li><a href="download-ru.html">Скачать</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ресурсы</h4>
+          <ul>
+            <li><a href="docs-ru.html">Документация</a></li>
+            <li><a href="faq-ru.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Проект</h4>
+          <ul>
+            <li><a href="https://deepatom.sytes.net">deepatom.sytes.net</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> DeepAtom. Все права защищены.</span>
+        <span class="footer-domain">deepatom.sytes.net</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Вверх">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/lang-switcher.js"></script>
+</body>
+</html>
