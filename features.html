@@ -87,11 +87,11 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg>
             </div>
             <h3>Real-Time Guard</h3>
-            <p>A lightweight background watchdog that inspects every process the moment it launches.</p>
+            <p>A lightweight background watchdog that inspects every process the moment it launches and may help block threats.</p>
             <ul>
               <li>Monitors 100% of process launches, 24/7</li>
               <li>Configurable interval: 0.5–5 seconds</li>
-              <li>Blocks confirmed threats in 2.5–3 seconds</li>
+              <li>May help block confirmed threats in 2.5–3 seconds</li>
               <li>2–5% CPU idle, 10–15% CPU active</li>
             </ul>
           </div>
@@ -191,8 +191,8 @@
       <div class="container">
         <div class="section-head reveal">
           <div class="eyebrow">Ring-3 vs Ring-0</div>
-          <h2>DeepAtom vs Kaspersky: Architecture Comparison</h2>
-          <p>DeepAtom operates in Ring-3 (user mode) for stability and transparency. Kaspersky uses Ring-0 (kernel mode) for deeper system access. Here's what that means in practice.</p>
+          <h2>DeepAtom vs Traditional Enterprise AV: Architecture Comparison</h2>
+          <p>DeepAtom operates in Ring-3 (user mode) for stability and transparency. Traditional enterprise antivirus typically uses Ring-0 (kernel mode) for deeper system access. Here's what that means in practice.</p>
         </div>
 
         <div class="table-wrap reveal">
@@ -201,8 +201,8 @@
               <tr>
                 <th style="width:30%">Feature / Capability</th>
                 <th class="highlight-col" style="width:23%">DeepAtom (Ring-3)</th>
-                <th style="width:23%">Kaspersky (Ring-0)</th>
-                <th style="width:24%">Winner</th>
+                <th style="width:23%">Traditional Enterprise AV (Ring-0)</th>
+                <th style="width:24%">Comparison</th>
               </tr>
             </thead>
             <tbody>
@@ -215,55 +215,55 @@
               <tr>
                 <td><strong>PE File Detection</strong></td>
                 <td class="highlight-col good">85–90%</td>
-                <td>99%+</td>
-                <td>Kaspersky</td>
+                <td>95–99%+</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Zero-Day Detection</strong></td>
                 <td class="highlight-col mid">20–50%</td>
-                <td>70–80%</td>
-                <td>Kaspersky</td>
+                <td>60–80%</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Rootkit Detection</strong></td>
                 <td class="highlight-col bad">Limited (0–20%)</td>
-                <td>99%+ (kernel hooking)</td>
-                <td>Kaspersky</td>
+                <td>High (kernel hooking)</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Memory Scanning</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
                 <td>✅ Full process memory</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Fileless Malware</strong></td>
                 <td class="highlight-col bad">❌ Not supported</td>
-                <td>✅ Full coverage</td>
-                <td>Kaspersky</td>
+                <td>✅ Often has coverage</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Behavioral Analysis</strong></td>
                 <td class="highlight-col good">Ring-3 (WMI, filesystem, registry)</td>
                 <td>Ring-0 (kernel callbacks)</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Process Interception</strong></td>
                 <td class="highlight-col mid">Polling (0.5s intervals)</td>
                 <td>Kernel callbacks (instant)</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Driver Installation</strong></td>
                 <td class="highlight-col good">❌ No kernel driver</td>
-                <td>✅ Requires kernel driver</td>
+                <td>✅ Often requires kernel driver</td>
                 <td>DeepAtom</td>
               </tr>
               <tr>
                 <td><strong>System Stability Risk</strong></td>
                 <td class="highlight-col good">Low (user mode crash = app restart)</td>
-                <td>High (kernel crash = BSOD)</td>
+                <td>Higher (kernel crash = BSOD)</td>
                 <td>DeepAtom</td>
               </tr>
               <tr>
@@ -275,7 +275,7 @@
               <tr>
                 <td><strong>Transparency</strong></td>
                 <td class="highlight-col good">Full source visibility</td>
-                <td>Closed source</td>
+                <td>Typically closed source</td>
                 <td>DeepAtom</td>
               </tr>
               <tr>
@@ -287,109 +287,109 @@
               <tr>
                 <td><strong>Performance Impact</strong></td>
                 <td class="highlight-col good">2–5% idle, 10–15% active</td>
-                <td>3–8% idle, 15–25% active</td>
-                <td>DeepAtom</td>
+                <td>Varies (3–15% typical)</td>
+                <td>Comparable</td>
               </tr>
               <tr>
                 <td><strong>Scan Speed (10MB file)</strong></td>
                 <td class="highlight-col good">2–3 seconds</td>
                 <td>1–2 seconds</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Real-Time Blocking Speed</strong></td>
                 <td class="highlight-col mid">2.5–3 seconds</td>
                 <td>< 0.5 seconds</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>YARA Rules</strong></td>
                 <td class="highlight-col good">5,255+ (open database)</td>
                 <td>Proprietary signatures</td>
-                <td>Tie</td>
+                <td>Comparable</td>
               </tr>
               <tr>
                 <td><strong>ML Model</strong></td>
                 <td class="highlight-col good">LightGBM (15 features, retrainable)</td>
                 <td>Proprietary neural networks</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Sandbox</strong></td>
                 <td class="highlight-col good">✅ FakeNet + FakeRegistry</td>
                 <td>✅ Full VM sandbox</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Web Protection</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
                 <td>✅ URL filtering, phishing</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Email Protection</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
                 <td>✅ Email scanning</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Network Traffic Inspection</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
                 <td>✅ SSL/TLS interception</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Firewall</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
                 <td>✅ Built-in firewall</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>VPN</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
-                <td>✅ Secure Connection VPN</td>
-                <td>Kaspersky</td>
+                <td>✅ Included in premium versions</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Password Manager</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
                 <td>✅ Built-in</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Parental Controls</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
-                <td>✅ Safe Kids</td>
-                <td>Kaspersky</td>
+                <td>✅ Often included</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Cloud Backup</strong></td>
                 <td class="highlight-col bad">❌ Not available</td>
-                <td>✅ Included</td>
-                <td>Kaspersky</td>
+                <td>✅ Often included</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Multi-Platform</strong></td>
                 <td class="highlight-col bad">Windows only</td>
                 <td>Windows, macOS, Android, iOS</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Support</strong></td>
                 <td class="highlight-col mid">Community (GitHub)</td>
                 <td>24/7 professional</td>
-                <td>Kaspersky</td>
+                <td>Enterprise AV</td>
               </tr>
               <tr>
                 <td><strong>Price</strong></td>
                 <td class="highlight-col good">Free (open source)</td>
-                <td>$60–$150/year</td>
+                <td>$30–$150/year typical</td>
                 <td>DeepAtom</td>
               </tr>
               <tr>
                 <td><strong>License</strong></td>
                 <td class="highlight-col good">Unlimited devices</td>
-                <td>1–10 devices (tier-dependent)</td>
+                <td>1–10 devices typical</td>
                 <td>DeepAtom</td>
               </tr>
             </tbody>
@@ -412,34 +412,34 @@
             </div>
 
             <div class="card">
-              <h4>✅ Kaspersky Wins On:</h4>
+              <h4>✅ Enterprise AV Wins On:</h4>
               <ul>
-                <li><strong>Detection Rate:</strong> 99%+ vs 85–90%</li>
+                <li><strong>Detection Rate:</strong> Typically 95–99%+ vs 85–90%</li>
                 <li><strong>Rootkit Detection:</strong> Kernel-level hooking</li>
                 <li><strong>Memory Scanning:</strong> Full process inspection</li>
-                <li><strong>Fileless Malware:</strong> Complete coverage</li>
-                <li><strong>Speed:</strong> Instant blocking vs 2.5s delay</li>
-                <li><strong>Features:</strong> Firewall, VPN, password manager, web protection</li>
+                <li><strong>Fileless Malware:</strong> More comprehensive coverage</li>
+                <li><strong>Speed:</strong> Faster blocking times</li>
+                <li><strong>Features:</strong> Often includes firewall, VPN, web protection, password managers</li>
               </ul>
             </div>
           </div>
 
           <div class="card" style="margin-top:24px; background: var(--bg-tertiary); border-color: var(--green-dim);">
-            <h4>🎯 When to Choose DeepAtom:</h4>
+            <h4>🎯 When DeepAtom May Be Suitable:</h4>
             <ul>
-              <li>You want <strong>full control</strong> over your antivirus logic</li>
+              <li>You want <strong>full control</strong> over antivirus logic for learning or research</li>
               <li>You need <strong>transparency</strong> — audit every detection decision</li>
               <li>You prioritize <strong>system stability</strong> (no kernel drivers)</li>
-              <li>You want to <strong>learn</strong> how modern AV engines work</li>
-              <li>You're on a <strong>budget</strong> (free forever)</li>
+              <li>You want to <strong>learn</strong> how AV engines work</li>
+              <li>You're on a <strong>budget</strong> (free and open source)</li>
               <li>You value <strong>privacy</strong> (no telemetry, offline-first)</li>
             </ul>
           </div>
 
           <div class="card" style="margin-top:24px;">
-            <h4>🎯 When to Choose Kaspersky:</h4>
+            <h4>🎯 When Enterprise AV Is Recommended:</h4>
             <ul>
-              <li>You need <strong>maximum detection rate</strong> (99%+)</li>
+              <li>You need <strong>maximum detection</strong> and comprehensive protection</li>
               <li>You face <strong>advanced threats</strong> (rootkits, fileless malware)</li>
               <li>You want <strong>all-in-one</strong> protection (firewall, VPN, web filter)</li>
               <li>You need <strong>professional support</strong> (24/7 helpdesk)</li>
@@ -450,7 +450,7 @@
         </div>
 
         <p class="table-note reveal" style="margin-top:40px; max-width:900px; margin-left:auto; margin-right:auto;">
-          <strong>Bottom line:</strong> DeepAtom is a specialized Ring-3 PE threat detector — transparent, customizable, and stable. Kaspersky is a full-featured Ring-0 security suite with kernel-level access. Both have their place. DeepAtom won't replace enterprise AV for high-risk environments, but for developers, researchers, and users who want control — it's a compelling alternative.
+          <strong>Bottom line:</strong> DeepAtom is an experimental Ring-3 PE threat detector — transparent, customizable, and stable. Traditional enterprise antivirus solutions offer more comprehensive Ring-0 security with kernel-level access. Both approaches have their place. DeepAtom is designed for research, learning, and experimentation — not as a replacement for commercial antivirus in production or high-risk environments.
         </p>
       </div>
     </section>
@@ -508,6 +508,9 @@
       <div class="footer-bottom">
         <span>© <span data-year>2026</span> DeepAtom. All rights reserved.</span>
         <span class="footer-domain">deepatom.sytes.net</span>
+      </div>
+      <div style="max-width:900px; margin:16px auto 0; padding-top:16px; border-top:1px solid var(--border); font-size:11px; line-height:1.5; color:var(--text-tertiary); text-align:center;">
+        <strong>MIT License</strong> | Copyright (c) 2026 DeepAtom. The software is provided "as is", without warranty of any kind, express or implied. In no event shall the authors be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
       </div>
     </div>
   </footer>
