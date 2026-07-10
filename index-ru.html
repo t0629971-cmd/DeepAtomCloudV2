@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Возможности — DeepAtom Антивирус</title>
-  <meta name="description" content="7 уровней защиты DeepAtom: машинное обучение, проактивная защита, защита в реальном времени, YARA сканер, песочница и многое другое.">
-  <link rel="canonical" href="https://deepatom.sytes.net/features-ru.html">
+  <title>DeepAtom — Антивирус на основе ИИ для Windows</title>
+  <meta name="description" content="DeepAtom — антивирус с машинным обучением для Windows, сочетающий статический анализ, проактивную поведенческую защиту и мониторинг в реальном времени.">
+  <link rel="canonical" href="https://deepatom.sytes.net/index-ru.html">
+  <meta property="og:title" content="DeepAtom — Антивирус на основе ИИ для Windows">
+  <meta property="og:description" content="Обнаружение с помощью машинного обучения, проактивная защита и мониторинг в реальном времени для Windows.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://deepatom.sytes.net/index-ru.html">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,13 +28,15 @@
         <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
         DeepAtom
       </a>
+
       <nav class="main-nav">
-        <a href="index-ru.html">Главная</a>
-        <a href="features-ru.html" class="active">Возможности</a>
+        <a href="index-ru.html" class="active">Главная</a>
+        <a href="features-ru.html">Возможности</a>
         <a href="download-ru.html">Скачать</a>
         <a href="docs-ru.html">Документация</a>
         <a href="faq-ru.html">FAQ</a>
       </nav>
+
       <div class="header-actions">
         <a href="docs-ru.html" class="btn btn-ghost">Документация</a>
         <a href="download-ru.html" class="btn btn-primary">Скачать бесплатно</a>
@@ -42,100 +48,58 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="eyebrow">7 уровней защиты</div>
-        <h1>Всё, что нужно для защиты вашего ПК</h1>
-        <p>DeepAtom объединяет машинное обучение, поведенческий анализ и классическое обнаружение сигнатур в один лёгкий движок.</p>
-      </div>
-    </section>
-
-    <section class="section-pad">
-      <div class="container">
-        <div class="grid grid-3">
-          <div class="card card-accent reveal d1">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2a3.5 3.5 0 0 0-3.5 3.5V6a3 3 0 0 0-2 5 3 3 0 0 0 2 5v.5A3.5 3.5 0 0 0 9.5 20"/><path d="M14.5 2A3.5 3.5 0 0 1 18 5.5V6a3 3 0 0 1 2 5 3 3 0 0 1-2 5v.5a3.5 3.5 0 0 1-3.5 3.5"/><path d="M9.5 2v18M14.5 2v18"/></svg>
-            </div>
-            <h3>Движок машинного обучения</h3>
-            <p>Классификатор LightGBM, обученный на 15 статических PE-признаках. Точность 85–90%, ~50мс на предсказание.</p>
-          </div>
-
-          <div class="card card-accent reveal d2">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5.2 3.8 9.4 9 10 5.2-.6 9-4.8 9-10V6l-9-4Z"/></svg>
-            </div>
-            <h3>Проактивная защита <span class="tag-new">Новое</span></h3>
-            <p>Поведенческий анализ Ring-3, который может помочь выявить ransomware, инъекции и подмену в реальном времени.</p>
-          </div>
-
-          <div class="card card-accent reveal d3">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg>
-            </div>
-            <h3>Защита в реальном времени</h3>
-            <p>Мониторит каждый запуск процесса 24/7 и может помочь заблокировать подтверждённые угрозы за 2.5–3 секунды.</p>
-          </div>
-
-          <div class="card card-accent reveal d4">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-            </div>
-            <h3>Многоуровневое сканирование</h3>
-            <p>Чёрный список SHA256, сигнатуры YARA, извлечение признаков и ML-классификация — за один проход.</p>
-          </div>
-
-          <div class="card card-accent reveal d5">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"/><path d="m14 7 3 3"/></svg>
-            </div>
-            <h3>YARA AutoGen</h3>
-            <p>Автоматически генерирует новые правила YARA из ML-обнаружений и расширяет базу сигнатур.</p>
-          </div>
-
-          <div class="card card-accent reveal d6">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 2v6.5L4.5 18a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 8.5V2"/><path d="M8.5 2h7"/></svg>
-            </div>
-            <h3>Анализ в песочнице</h3>
-            <p>Выполняет подозрительные файлы в изолированной среде с автоматическим откатом после анализа.</p>
-          </div>
-
-          <div class="card card-accent reveal d7">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/></svg>
-            </div>
-            <h3>Облачная репутация</h3>
-            <p>Опциональная проверка хешей через облачный API для мгновенного обнаружения новых угроз.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="eyebrow">Производительность</div>
-          <h2>Быстро, точно, эффективно</h2>
-          <p>Оптимизировано для скорости без ущерба для точности обнаружения.</p>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <canvas class="hero-canvas"></canvas>
+      <div class="container hero-inner">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          DeepAtom 2.1 — Проактивная защита уже доступна
         </div>
 
-        <div class="stats-strip reveal">
+        <h1>Продвинутый <span class="highlight">антивирус на основе ИИ</span> для Windows</h1>
+
+        <p class="hero-sub">
+          DeepAtom может помочь в обнаружении вредоносных программ с помощью машинного обучения, проактивной поведенческой защиты
+          и мониторинга в реальном времени. Точность обнаружения 85–90% на известных угрозах.
+        </p>
+
+        <div class="callout warn" style="max-width:640px; margin:20px auto; text-align:left; font-size:14px;">
+          <strong>⚠️ Открытая бета-версия:</strong> DeepAtom в настоящее время находится в открытой бета-версии. Это экспериментальный, некоммерческий исследовательский проект. Используйте на свой риск.
+        </div>
+
+        <div class="hero-cta">
+          <a href="download-ru.html" class="btn btn-primary btn-lg">
+            <svg class="dl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 21h14"/></svg>
+            Скачать бесплатно
+          </a>
+          <a href="features-ru.html" class="btn btn-ghost btn-lg">Возможности</a>
+        </div>
+
+        <p class="hero-meta">Windows 7 / 8 / 10 / 11 (x64) &nbsp;·&nbsp; Версия 2.1 &nbsp;·&nbsp; ~135 МБ</p>
+      </div>
+
+      <div class="container">
+        <div class="stats-strip">
           <div class="stat-item">
-            <div class="stat-number">87.5<span class="suffix">%</span></div>
+            <div class="stat-number"><span data-count="87.5" data-decimals="1">0</span><span class="suffix">%</span></div>
             <div class="stat-label">Точность обнаружения</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">25k<span class="suffix">+</span></div>
-            <div class="stat-label">SHA256 хешей в базе</div>
+            <div class="stat-number"><span data-count="25000">0</span><span class="suffix">+</span></div>
+            <div class="stat-label">База SHA256 угроз</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number">5255<span class="suffix">+</span></div>
+            <div class="stat-number"><span data-count="5255">0</span><span class="suffix">+</span></div>
             <div class="stat-label">Правил YARA</div>
           </div>
           <div class="stat-item">
+            <div class="stat-number"><span data-count="15">0</span></div>
+            <div class="stat-label">ML-признаков анализа</div>
+          </div>
+          <div class="stat-item">
             <div class="stat-number">2–3<span class="suffix">с</span></div>
-            <div class="stat-label">Среднее время сканирования</div>
+            <div class="stat-label">Среднее время сканирования (10МБ)</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">2.5<span class="suffix">с</span></div>
@@ -145,244 +109,111 @@
       </div>
     </section>
 
-    <!-- ================= СРАВНЕНИЕ RING-3 VS RING-0 ================= -->
-    <section class="section-pad" id="comparison">
+    <!-- ================= FEATURES PREVIEW ================= -->
+    <section class="section-pad" id="features">
       <div class="container">
         <div class="section-head reveal">
-          <div class="eyebrow">Ring-3 vs Ring-0</div>
-          <h2>DeepAtom vs Корпоративные антивирусы: Сравнение архитектур</h2>
-          <p>DeepAtom работает в Ring-3 (пользовательский режим) для стабильности и прозрачности. Традиционные корпоративные антивирусы обычно используют Ring-0 (режим ядра) для глубокого доступа к системе. Вот что это означает на практике.</p>
+          <div class="eyebrow">Уровни защиты</div>
+          <h2>Всё, что нужно, ничего лишнего</h2>
+          <p>DeepAtom объединяет семь независимых систем защиты в один лёгкий движок, который тихо работает в фоновом режиме.</p>
         </div>
 
-        <div class="table-wrap reveal">
-          <table>
-            <thead>
-              <tr>
-                <th style="width:30%">Функция / Возможность</th>
-                <th class="highlight-col" style="width:23%">DeepAtom (Ring-3)</th>
-                <th style="width:23%">Корпоративный AV (Ring-0)</th>
-                <th style="width:24%">Сравнение</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Уровень работы</strong></td>
-                <td class="highlight-col">Пользовательский режим (Ring-3)</td>
-                <td>Режим ядра (Ring-0)</td>
-                <td>Компромисс</td>
-              </tr>
-              <tr>
-                <td><strong>Обнаружение PE-файлов</strong></td>
-                <td class="highlight-col good">85–90%</td>
-                <td>95–99%+</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Zero-Day обнаружение</strong></td>
-                <td class="highlight-col mid">20–50%</td>
-                <td>60–80%</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Обнаружение руткитов</strong></td>
-                <td class="highlight-col bad">Ограничено (0–20%)</td>
-                <td>Высокий уровень (перехват на уровне ядра)</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Сканирование памяти</strong></td>
-                <td class="highlight-col bad">❌ Недоступно</td>
-                <td>✅ Полное сканирование памяти процессов</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Fileless-угрозы</strong></td>
-                <td class="highlight-col bad">❌ Не поддерживается</td>
-                <td>✅ Часто имеется покрытие</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Поведенческий анализ</strong></td>
-                <td class="highlight-col good">Ring-3 (WMI, файлы, реестр)</td>
-                <td>Ring-0 (callback на уровне ядра)</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Перехват процессов</strong></td>
-                <td class="highlight-col mid">Опрос (интервал 0.5с)</td>
-                <td>Callback ядра (мгновенно)</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Установка драйвера</strong></td>
-                <td class="highlight-col good">❌ Без драйвера ядра</td>
-                <td>✅ Часто требуется драйвер ядра</td>
-                <td>DeepAtom</td>
-              </tr>
-              <tr>
-                <td><strong>Риск нестабильности системы</strong></td>
-                <td class="highlight-col good">Низкий (сбой = перезапуск приложения)</td>
-                <td>Выше (сбой ядра = синий экран)</td>
-                <td>DeepAtom</td>
-              </tr>
-              <tr>
-                <td><strong>Совместимость</strong></td>
-                <td class="highlight-col good">Высокая (нет конфликтов с ядром)</td>
-                <td>Средняя (возможны конфликты драйверов)</td>
-                <td>DeepAtom</td>
-              </tr>
-              <tr>
-                <td><strong>Прозрачность</strong></td>
-                <td class="highlight-col good">Полная видимость исходного кода</td>
-                <td>Обычно закрытый исходный код</td>
-                <td>DeepAtom</td>
-              </tr>
-              <tr>
-                <td><strong>Кастомизация</strong></td>
-                <td class="highlight-col good">Переобучение ML, редактирование YARA, изменение правил</td>
-                <td>Ограничено (только пресеты)</td>
-                <td>DeepAtom</td>
-              </tr>
-              <tr>
-                <td><strong>Влияние на производительность</strong></td>
-                <td class="highlight-col good">2–5% в простое, 10–15% активно</td>
-                <td>Варьируется (обычно 3–15%)</td>
-                <td>Сопоставимо</td>
-              </tr>
-              <tr>
-                <td><strong>Скорость сканирования (10МБ)</strong></td>
-                <td class="highlight-col good">2–3 секунды</td>
-                <td>1–2 секунды</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Скорость блокировки в реальном времени</strong></td>
-                <td class="highlight-col mid">2.5–3 секунды</td>
-                <td>< 0.5 секунды</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>YARA-правила</strong></td>
-                <td class="highlight-col good">5,255+ (открытая база)</td>
-                <td>Проприетарные сигнатуры</td>
-                <td>Сопоставимо</td>
-              </tr>
-              <tr>
-                <td><strong>ML-модель</strong></td>
-                <td class="highlight-col good">LightGBM (15 признаков, переобучаемая)</td>
-                <td>Проприетарные нейросети</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Песочница</strong></td>
-                <td class="highlight-col good">✅ FakeNet + FakeRegistry</td>
-                <td>✅ Часто полная VM-песочница</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Веб-защита</strong></td>
-                <td class="highlight-col bad">❌ Недоступно</td>
-                <td>✅ Фильтрация URL, антифишинг</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Защита электронной почты</strong></td>
-                <td class="highlight-col bad">❌ Недоступно</td>
-                <td>✅ Сканирование почты</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Файрвол</strong></td>
-                <td class="highlight-col bad">❌ Недоступно</td>
-                <td>✅ Встроенный файрвол</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Поддержка</strong></td>
-                <td class="highlight-col mid">Сообщество (GitHub)</td>
-                <td>Профессиональная 24/7</td>
-                <td>Корпоративный AV</td>
-              </tr>
-              <tr>
-                <td><strong>Цена</strong></td>
-                <td class="highlight-col good">Бесплатно (open source)</td>
-                <td>$30–$150/год типично</td>
-                <td>DeepAtom</td>
-              </tr>
-              <tr>
-                <td><strong>Лицензия</strong></td>
-                <td class="highlight-col good">Неограниченное количество устройств</td>
-                <td>1–10 устройств типично</td>
-                <td>DeepAtom</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="reveal" style="max-width:900px; margin:40px auto 0;">
-          <h3>Основные выводы</h3>
-          <div class="grid grid-2" style="margin-top:24px;">
-            <div class="card">
-              <h4>✅ DeepAtom выигрывает в:</h4>
-              <ul>
-                <li><strong>Стабильность:</strong> Без драйвера ядра = без риска синего экрана</li>
-                <li><strong>Прозрачность:</strong> Полная видимость исходного кода</li>
-                <li><strong>Кастомизация:</strong> Переобучение ML, редактирование YARA</li>
-                <li><strong>Производительность:</strong> Меньше нагрузка на CPU/RAM</li>
-                <li><strong>Цена:</strong> Бесплатно и open source</li>
-                <li><strong>Приватность:</strong> Без телеметрии, работает полностью офлайн</li>
-              </ul>
+        <div class="grid grid-3">
+          <div class="card card-accent reveal d1">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a3.5 3.5 0 0 0-3.5 3.5V6a3 3 0 0 0-2 5 3 3 0 0 0 2 5v.5A3.5 3.5 0 0 0 9.5 20"/><path d="M14.5 2A3.5 3.5 0 0 1 18 5.5V6a3 3 0 0 1 2 5 3 3 0 0 1-2 5v.5a3.5 3.5 0 0 1-3.5 3.5"/><path d="M9.5 2v18M14.5 2v18"/></svg>
             </div>
+            <h3>Движок машинного обучения</h3>
+            <p>Классификатор LightGBM, обученный на 15 статических PE-признаках. Точность 85–90%, ~50мс на предсказание.</p>
+          </div>
 
-            <div class="card">
-              <h4>✅ Корпоративный AV выигрывает в:</h4>
-              <ul>
-                <li><strong>Процент обнаружения:</strong> Обычно 95–99%+ против 85–90%</li>
-                <li><strong>Обнаружение руткитов:</strong> Перехват на уровне ядра</li>
-                <li><strong>Сканирование памяти:</strong> Полная инспекция процессов</li>
-                <li><strong>Fileless-угрозы:</strong> Более полное покрытие</li>
-                <li><strong>Скорость:</strong> Быстрее блокирует угрозы</li>
-                <li><strong>Функции:</strong> Часто включает файрвол, VPN, веб-защиту, менеджеры паролей</li>
-              </ul>
+          <div class="card card-accent reveal d2">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5.2 3.8 9.4 9 10 5.2-.6 9-4.8 9-10V6l-9-4Z"/></svg>
             </div>
+            <h3>Проактивная защита <span class="tag-new">Новое</span></h3>
+            <p>Поведенческий анализ Ring-3, который может помочь выявить ransomware, инъекции и подмену в реальном времени.</p>
           </div>
 
-          <div class="card" style="margin-top:24px; background: var(--bg-tertiary); border-color: var(--green-dim);">
-            <h4>🎯 Когда DeepAtom может подойти:</h4>
-            <ul>
-              <li>Вам нужен <strong>полный контроль</strong> над логикой антивируса для обучения или исследований</li>
-              <li>Вам нужна <strong>прозрачность</strong> — аудит каждого решения об обнаружении</li>
-              <li>Вы цените <strong>стабильность системы</strong> (без драйверов ядра)</li>
-              <li>Вы хотите <strong>изучать</strong>, как работают антивирусные движки</li>
-              <li>Ограниченный <strong>бюджет</strong> (бесплатно и open source)</li>
-              <li>Вы цените <strong>приватность</strong> (без телеметрии, офлайн-первый)</li>
-            </ul>
+          <div class="card card-accent reveal d3">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg>
+            </div>
+            <h3>Защита в реальном времени</h3>
+            <p>Мониторит каждый запуск процесса 24/7 и может помочь заблокировать подтверждённые угрозы за 2.5–3 секунды.</p>
           </div>
 
-          <div class="card" style="margin-top:24px;">
-            <h4>🎯 Когда рекомендуется корпоративный AV:</h4>
-            <ul>
-              <li>Нужна <strong>максимальная защита</strong> и полное покрытие</li>
-              <li>Столкновение с <strong>продвинутыми угрозами</strong> (руткиты, fileless)</li>
-              <li>Нужна <strong>комплексная защита</strong> (файрвол, VPN, веб-фильтр)</li>
-              <li>Нужна <strong>профессиональная поддержка</strong> (24/7 техподдержка)</li>
-              <li>Требуется <strong>мультиплатформенность</strong></li>
-              <li>Предпочитаете решения <strong>"поставил и забыл"</strong></li>
-            </ul>
+          <div class="card card-accent reveal d4">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3>Многоуровневое сканирование</h3>
+            <p>Чёрный список SHA256, сигнатуры YARA, извлечение признаков и ML-классификация — за один проход.</p>
+          </div>
+
+          <div class="card card-accent reveal d5">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72Z"/><path d="m14 7 3 3"/><path d="M5 6v4M19 14v4M10 2v2M7 8H3M21 16h-4M11 3H9"/></svg>
+            </div>
+            <h3>YARA AutoGen</h3>
+            <p>Автоматически генерирует новые правила YARA из ML-обнаружений и расширяет базу сигнатур.</p>
+          </div>
+
+          <div class="card card-accent reveal d6">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v6.5L4.5 18a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 8.5V2"/><path d="M8.5 2h7"/><path d="M7 15h10"/></svg>
+            </div>
+            <h3>Песочница</h3>
+            <p>Выполняет подозрительные файлы в изолированной среде с автоматическим откатом после анализа.</p>
           </div>
         </div>
 
-        <p class="table-note reveal" style="margin-top:40px; max-width:900px; margin-left:auto; margin-right:auto;">
-          <strong>Итог:</strong> DeepAtom — это экспериментальный Ring-3 детектор PE-угроз, прозрачный, кастомизируемый и стабильный. Традиционные корпоративные антивирусы предлагают более полную Ring-0 защиту с доступом к ядру. У обоих подходов есть своё место. DeepAtom создан для исследований, обучения и экспериментов — не как замена коммерческим антивирусам в продакшене или высокорисковых средах.
-        </p>
+        <div class="text-center reveal" style="margin-top:40px;">
+          <a href="features-ru.html" class="btn btn-ghost">Все 7 уровней защиты →</a>
+        </div>
       </div>
     </section>
 
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section-pad" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Как это работает</div>
+          <h2>Четыре уровня защиты между вами и каждой угрозой</h2>
+          <p>Каждый файл проверяется за миллисекунды через конвейер, созданный для скорости и точности.</p>
+        </div>
+
+        <div class="layers reveal">
+          <div class="layer-row">
+            <div class="layer-num">01</div>
+            <div class="layer-body"><strong>Чёрный список SHA256</strong><span>Мгновенное сравнение с 25 000+ известных вредоносных хешей</span></div>
+            <div class="layer-time">&lt; 50мс</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">02</div>
+            <div class="layer-body"><strong>Сигнатуры YARA</strong><span>Сопоставление с 5 255+ правилами сообщества и пользовательскими</span></div>
+            <div class="layer-time">50–100мс</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">03</div>
+            <div class="layer-body"><strong>Извлечение признаков</strong><span>15 статических признаков извлекаются из PE-структуры</span></div>
+            <div class="layer-time">100–300мс</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num">04</div>
+            <div class="layer-body"><strong>ML-классификация</strong><span>Модель LightGBM возвращает вердикт с оценкой уверенности</span></div>
+            <div class="layer-time">~50мс</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
     <section class="section-pad">
       <div class="container">
         <div class="cta-banner reveal">
-          <h2>Готовы попробовать?</h2>
-          <p>Бесплатно для личного и коммерческого использования.</p>
+          <h2>Готовы протестировать DeepAtom?</h2>
+          <p>Бесплатно для скачивания, легко установить и запустить на вашем компьютере за минуты.</p>
           <div class="hero-cta" style="margin-bottom:0;">
             <a href="download-ru.html" class="btn btn-primary btn-lg">Скачать DeepAtom 2.1</a>
             <a href="docs-ru.html" class="btn btn-ghost btn-lg">Читать документацию</a>
@@ -400,7 +231,7 @@
             <img src="images/logo.svg" alt="DeepAtom" class="logo-mark">
             DeepAtom
           </a>
-          <p>Антивирус с машинным обучением для Windows. Создан для домашних пользователей, небольших команд и разработчиков.</p>
+          <p>Антивирус с машинным обучением для Windows. Создан для домашних пользователей, небольших команд и разработчиков, которым нужен открытый, настраиваемый движок защиты.</p>
         </div>
         <div class="footer-col">
           <h4>Продукт</h4>
@@ -408,13 +239,15 @@
             <li><a href="features-ru.html">Возможности</a></li>
             <li><a href="download-ru.html">Скачать</a></li>
             <li><a href="download-ru.html#changelog">История изменений</a></li>
-            <li><a href="features-ru.html#comparison">Сравнить</a></li>
+            <li><a href="features-ru.html#comparison">Сравнение</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Ресурсы</h4>
           <ul>
             <li><a href="docs-ru.html">Документация</a></li>
+            <li><a href="docs-ru.html#getting-started">Начало работы</a></li>
+            <li><a href="docs-ru.html#api-reference">Справочник API</a></li>
             <li><a href="faq-ru.html">FAQ</a></li>
           </ul>
         </div>
@@ -423,6 +256,7 @@
           <ul>
             <li><a href="https://deepatom.sytes.net">deepatom.sytes.net</a></li>
             <li><a href="faq-ru.html">Поддержка</a></li>
+            <li><a href="docs-ru.html#architecture">Архитектура</a></li>
           </ul>
         </div>
       </div>
